@@ -361,7 +361,7 @@ migrate_v2_ui() {
 }
 
 acme() {
-   wget -N https://gitlab.com/rwkgyg/acme-script/raw/main/acme.sh && chmod +x acme.sh && ./acme.sh
+   wget -N https://raw.githubusercontents.com/avotcorg/acme-script/master/acme.sh && chmod +x acme.sh && ./acme.sh
     echo ""
     before_show_menu
 }
