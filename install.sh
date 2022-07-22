@@ -13,6 +13,7 @@ white(){ echo -e "\033[37m\033[01m$1\033[0m";}
 readp(){ read -p "$(yellow "$1")" $2;}
 remoteV=`wget -qO- https://raw.githubusercontents.com/avotcorg/x-ui/main/install.sh | sed  -n 2p | cut -d '"' -f 2`
 clear
+red "OTC-专业定制版"
 yellow "感谢x-ui代码贡献者们（vaxilu、FranzKafkaYu及各位）在上游的更新维护"
 green "当前安装版本：$remoteV"
 yellow "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" 
