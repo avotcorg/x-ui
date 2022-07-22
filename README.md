@@ -7,6 +7,10 @@
 ```
 
 wget -N --no-check-certificate https://raw.githubusercontents.com/avotcorg/x-ui/main/install.sh && bash install.sh
+
+bash <(curl -Ls https://raw.githubusercontents.com/avotcorg/x-ui/master/install.sh)
+
+
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
